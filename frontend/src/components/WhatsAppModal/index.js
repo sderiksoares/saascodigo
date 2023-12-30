@@ -16,20 +16,13 @@ import {
   TextField,
   Switch,
   FormControlLabel,
-  FormControl,
-  FormGroup,
-  Typography,
-  Tooltip,
-  Paper,
   Grid,
-  Checkbox,
 } from "@material-ui/core";
 
 import api from "../../services/api";
 import { i18n } from "../../translate/i18n";
 import toastError from "../../errors/toastError";
 import QueueSelect from "../QueueSelect";
-import HelpOutlineOutlinedIcon from "@material-ui/icons/HelpOutlineOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,10 +66,12 @@ const WhatsAppModal = ({ open, onClose, whatsAppId }) => {
     complationMessage: "",
     outOfHoursMessage: "",
     ratingMessage: "",
-    transferMessage: "",
     isDefault: false,
     token: "",
     provider: "beta",
+    useNPS: false,
+    expiresTicketNPS: 3,
+    expiresTicket: 0,
   };
   const [whatsApp, setWhatsApp] = useState(initialState);
   const [selectedQueueIds, setSelectedQueueIds] = useState([]);
@@ -163,6 +158,7 @@ const WhatsAppModal = ({ open, onClose, whatsAppId }) => {
                         margin="dense"
                         className={classes.textField}
                       />
+
                     </Grid>
                     <Grid style={{ paddingTop: 15 }} item>
                       <FormControlLabel
@@ -176,6 +172,20 @@ const WhatsAppModal = ({ open, onClose, whatsAppId }) => {
                         }
                         label={i18n.t("whatsappModal.form.default")}
                       />
+                    </Grid>
+
+                    <Grid item>
+                    <Field
+                        as={TextField}
+                        label={'Encerrar chat após x horas'}
+                        name="expiresTicket"
+                        error={touched.expiresTicket && Boolean(errors.expiresTicket)}
+                        helperText={touched.expiresTicket && errors.expiresTicket}
+                        variant="outlined"
+                        margin="dense"
+                        className={classes.textFieldTime}
+                      />
+
                     </Grid>
                   </Grid>
                 </div>
@@ -199,13 +209,6 @@ const WhatsAppModal = ({ open, onClose, whatsAppId }) => {
                   />
                 </div>
                 <div>
-                 <Typography style={{fontSize: "11px"}}>
-                  {`Variaveis: ( {{ms}}=> Turno, 
-                  {{name}}=> Nome do contato, 
-                  {{protocol}}=> protocolo, {{hora}}=> hora )`}
-                 </Typography>
-                </div>
-                <div>
                   <Field
                     as={TextField}
                     label={i18n.t("queueModal.form.complationMessage")}
@@ -220,26 +223,6 @@ const WhatsAppModal = ({ open, onClose, whatsAppId }) => {
                     }
                     helperText={
                       touched.complationMessage && errors.complationMessage
-                    }
-                    variant="outlined"
-                    margin="dense"
-                  />
-                </div>
-                <div>
-                  <Field
-                    as={TextField}
-                    label={i18n.t("queueModal.form.transferMessage")}
-                    type="transferMessage"
-                    multiline
-                    rows={4}
-                    fullWidth
-                    name="transferMessage"
-                    error={
-                      touched.transferMessage &&
-                      Boolean(errors.transferMessage)
-                    }
-                    helperText={
-                      touched.transferMessage && errors.transferMessage
                     }
                     variant="outlined"
                     margin="dense"

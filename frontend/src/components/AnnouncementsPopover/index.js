@@ -26,7 +26,6 @@ import moment from "moment";
 import { socketConnection } from "../../services/socket";
 
 const useStyles = makeStyles((theme) => ({
-contend:{minWidth: 300,maxWidth: 500,},
   mainPaper: {
     flex: 1,
     maxHeight: 300,
@@ -38,7 +37,6 @@ contend:{minWidth: 300,maxWidth: 500,},
 }));
 
 function AnnouncementDialog({ announcement, open, handleClose }) {
- const classes=useStyles()
   const getMediaPath = (filename) => {
     return `${process.env.REACT_APP_BACKEND_URL}/public/${filename}`;
   };
@@ -50,7 +48,7 @@ function AnnouncementDialog({ announcement, open, handleClose }) {
       aria-describedby="alert-dialog-description"
     >
       <DialogTitle id="alert-dialog-title">{announcement.title}</DialogTitle>
-      <DialogContent className={classes.contend}>
+      <DialogContent>
         {announcement.mediaPath && (
           <div
             style={{
@@ -248,7 +246,7 @@ export default function AnnouncementsPopover() {
           variant="dot"
           invisible={invisible || announcements.length < 1}
         >
-          <AnnouncementIcon style={{ color: "white" }} />
+          <AnnouncementIcon />
         </Badge>
       </IconButton>
       <Popover

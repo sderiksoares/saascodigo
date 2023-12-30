@@ -8,7 +8,6 @@ import TicketsManager from "../../components/TicketsManager/";
 import Ticket from "../../components/Ticket/";
 
 import { i18n } from "../../translate/i18n";
-import WhatsappBackground from "../../assets/wa-background.png"
 
 const useStyles = makeStyles(theme => ({
 	chatContainer: {
@@ -17,10 +16,6 @@ const useStyles = makeStyles(theme => ({
 		padding: theme.spacing(4),
 		height: `calc(100% - 48px)`,
 		overflowY: "hidden",
-		backgroundImage: `url(${WhatsappBackground})`,
-		backgroundPosition: 'center', 
-		backgroundSize: 'cover', 
-		backgroundRepeat: 'no-repeat', 
 	},
 
 	chatPapper: {

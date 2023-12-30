@@ -100,10 +100,6 @@ const messages = {
           session: "Sessão",
         },
       },
-      internalChat:{
-        title: "Chat Interno"
-          
-      },
       whatsappModal: {
         title: {
           add: "Adicionar WhatsApp",
@@ -181,29 +177,13 @@ const messages = {
           complationMessage: "Mensagem de conclusão",
           outOfHoursMessage: "Mensagem de fora de expediente",
           ratingMessage: "Mensagem de avaliação",
-          transferMessage: "Mensagem de Transferência",
           token: "Token",
         },
         buttons: {
           okAdd: "Adicionar",
           okEdit: "Salvar",
           cancel: "Cancelar",
-          attach: "Anexar Arquivo",
         },
-        serviceHours:{
-          dayWeek:"Dia da semana",
-          startTimeA:"Hora Inicial - Turno A",
-          endTimeA:"Hora Final - Turno A",
-          startTimeB:"Hora Inicial - Turno B",
-          endTimeB:"Hora Final - Turno B",
-          monday:"Segunda-feira",
-          tuesday:"Terça-feira",
-          wednesday:"Quarta-feira",
-          thursday:"Quinta-feira",
-          friday:"Sexta-feira",
-          saturday:"Sábado",
-          sunday:"Domingo",
-        }
       },
       userModal: {
         title: {
@@ -245,13 +225,10 @@ const messages = {
         title: {
           add: "Nova Tag",
           edit: "Editar Tag",
-          addKanban: "Nova Lane",
-          editKanban: "Editar Lane",
         },
         form: {
           name: "Nome",
           color: "Cor",
-           kanban: "Kanban",
         },
         buttons: {
           okAdd: "Adicionar",
@@ -259,8 +236,6 @@ const messages = {
           cancel: "Cancelar",
         },
         success: "Tag salvo com sucesso.",
-        successKanban: "Lane salva com sucesso.",
-
       },
       chat: {
         noTicketMessage: "Selecione um ticket para começar a conversar.",
@@ -333,12 +308,12 @@ const messages = {
           dashboard: "Dashboard",
           connections: "Conexões",
           tickets: "Atendimentos",
+          todolist: "Tarefas",
           quickMessages: "Respostas Rápidas",
           contacts: "Contatos",
           queues: "Filas & Chatbot",
           tags: "Tags",
           administration: "Administração",
-          service: "Atendimento",
           users: "Usuários",
           settings: "Configurações",
           helps: "Ajuda",
@@ -348,9 +323,6 @@ const messages = {
           annoucements: "Informativos",
           chats: "Chat Interno",
           financeiro: "Financeiro",
-          logout: "Sair",
-          management: "Gerência",
-          kanban: "Kanban"
         },
         appBar: {
           user: {
@@ -384,34 +356,6 @@ const messages = {
         dialog: {
           shortcode: "Atalho",
           message: "Resposta",
-        },
-      },
-      kanban: {
-        title: "Kanban",
-        searchPlaceholder: "Pesquisa",
-        subMenus:{
-          list:"Painel",
-          tags:"Lanes"
-        }
-      },
-      tagsKanban: {
-        title: "Lanes",
-        laneDefault:"Em aberto",
-        confirmationModal: {
-          deleteTitle: "Você tem certeza que quer excluir esta Lane?",
-          deleteMessage: "Esta ação não pode ser revertida.",
-        },
-        table: {
-          name: "Nome",
-          color: "Cor",
-          tickets: "Tickets",
-          actions: "Ações",
-        },
-        buttons: {
-          add: "Nova Lane",
-        },
-        toasts: {
-          deleted: "Lane excluída com sucesso.",
         },
       },
       contactLists: {
@@ -656,13 +600,11 @@ const messages = {
           deleteTitle: "Você tem certeza que quer excluir esta Tag?",
           deleteMessage: "Esta ação não pode ser revertida.",
         },
-         table: {
+        table: {
           name: "Nome",
           color: "Cor",
-          tickets: "Registros",
+          tickets: "Registros Tagdos",
           actions: "Ações",
-          id: "Id",
-          kanban: "Kanban",
         },
         buttons: {
           add: "Nova Tag",

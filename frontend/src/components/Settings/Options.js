@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     height: 240,
   },
   tab: {
+    background: "#f2f5f3",
     borderRadius: 4,
     width: "100%",
     "& .MuiTab-wrapper": {
@@ -398,6 +399,8 @@ export default function Options(props) {
               }}
             >
               <MenuItem value={"text"}>Texto</MenuItem>
+              <MenuItem value={"button"}>Botão</MenuItem>
+              <MenuItem value={"list"}>Lista</MenuItem>
             </Select>
             <FormHelperText>
               {loadingChatbotType && "Atualizando..."}

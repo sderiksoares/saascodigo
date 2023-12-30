@@ -397,6 +397,7 @@ async function verifyAndFinalizeCampaign(campaign) {
 
   const io = getIO();
   io.emit(`company-${campaign.companyId}-campaign`, {
+    action: "update",
     record: campaign
   });
 }
@@ -579,6 +580,7 @@ async function handleDispatchCampaign(job) {
   } catch (err: any) {
     Sentry.captureException(err);
     logger.error(err.message);
+    console.log(err.stack);
   }
 }
 
@@ -622,7 +624,7 @@ async function handleInvoiceCreate() {
           { type: QueryTypes.SELECT }
         );
         if (invoice[0]['mycount'] > 0) {
-
+          
         } else {
           const sql = `INSERT INTO "Invoices" (detail, status, value, "updatedAt", "createdAt", "dueDate", "companyId")
           VALUES ('${plan.name}', 'open', '${plan.value}', '${timestamp}', '${timestamp}', '${date}', ${c.id});`
